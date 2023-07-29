@@ -17,7 +17,7 @@ jobs:
           npm install @salesforce/cli
       - name: Authenticate to the target organisation
         run: |
-          sfdx force:auth:web:login -r https://login.salesforce.com -u SALESFORCE_USERNAME -p SALESFORCE_PASSWORD --setalias sfdc-org --json
+          sfdx force:auth:web:login -r https://login.salesforce.com -u ${{SALESFORCE_USERNAME}} -p ${{SALESFORCE_PASSWORD}} --setalias sfdc-org --json
       - name: Check authorized org list
         run: 'sfdx force:org:list'
       - name: Deploy metadata into the target org
