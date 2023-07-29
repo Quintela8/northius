@@ -18,7 +18,7 @@ jobs:
       - name: Authenticate to the target organisation
         run: |
           echo "${{ secrets.SALESFORCE_PRIVATE_KEY}}"  >  ~/private.key
-          sfdx org login jwt -o pjosegq90@gmail.com.northius -f ~/private.key -i ${{ secrets.CONNECTED_APP_CONSUMER_KEY}} -s -a sfdc-org
+          sfdx org login jwt -o pjosegq90@gmail.com.northius -f ~/private.key -i ${{ secrets.CONNECTED_APP_CONSUMER_KEY}} -s -a targetORG
       - name: Check authorized org list
         run: 'sfdx force:org:list'
       - name: Deploy metadata into the target org
