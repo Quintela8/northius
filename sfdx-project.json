@@ -29,7 +29,7 @@
       "versionDescription": "Common Apex Library supporting Apex Enterprise Patterns and much more!",
       "dependencies": [
         {
-          "package": "fflib-apex-mocks@1.0.LATEST"
+          "package": "fflib-apex-mocks@1.0.0-1"
         }
       ]
     }
