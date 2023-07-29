@@ -1,0 +1,50 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    },
+    {
+      "path": "packages/fflib-apex-mocks",
+      "default": false,
+      "package": "fflib-apex-mocks",
+      "versionName": "Summer '23",
+      "versionNumber": "1.0.0.NEXT",
+      "versionDescription": "An Apex mocking framework for true unit testing in Salesforce, with Stub API support"
+    },
+    {
+      "path": "packages/force-di",
+      "default": false,
+      "package": "force-di",
+      "versionName": "Summer '23",
+      "versionNumber": "1.0.0.NEXT",
+      "versionDescription": "Generic DI library with support for Apex, Triggers, Visualforce and Lightning"
+    },
+    {
+      "path": "packages/fflib-apex-common",
+      "default": false,
+      "package": "fflib-apex-common",
+      "versionName": "Summer '23",
+      "versionNumber": "1.0.0.NEXT",
+      "versionDescription": "Common Apex Library supporting Apex Enterprise Patterns and much more!",
+      "dependencies": [
+        {
+          "package": "fflib-apex-mocks@1.0.LATEST"
+        }
+      ]
+    }
+  ],
+  "name": "northius",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "57.0",
+  "packageAliases": {
+    "fflib-apex-mocks": "0Ho7R000000wk7nSAA",
+    "fflib-apex-mocks@1.0.0-1": "04t7R000001q2HpQAI",
+    "fflib-apex-common": "0Ho7R000000wk7sSAA",
+    "fflib-apex-common@1.0.0-1": "04t7R000001q2HuQAI",
+    "force-di": "0Ho7R000000wk7xSAA",
+    "force-di@1.0.0-1": "04t7R000001q2HqQAI",
+    "force-di@1.0.0-2": "04t7R000001q2HzQAI"
+  }
+}
