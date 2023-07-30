@@ -2,7 +2,7 @@
 global with sharing class AccountResource {
     @HttpPost
     // e.g. /services/apexrest/account/{{accountId}}/setdescription?description={{description}}
-	global static void setDescription(String description)
+	global static void setDescription()
 	{
         RestRequest req = RestContext.request;
         String[] uriParts = req.requestURI.split('/');
