@@ -1,4 +1,4 @@
-public class AccountsSelector extends fflib_SObjectSelector implements IAccountSelector
+public class AccountSelector extends fflib_SObjectSelector implements IAccountSelector
 {
 	public static IAccountSelector newInstance()
 	{
