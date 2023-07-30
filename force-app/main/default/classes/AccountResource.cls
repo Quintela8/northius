@@ -1,5 +1,5 @@
 @RestResource(UrlMapping='/account/*/setdescription')
-global with sharin class AccountResource {
+global with sharing class AccountResource {
     @HttpPost
     // e.g. /services/apexrest/account/{{accountId}}/setdescription?description={{description}}
 	global static void setDescription(String description)
