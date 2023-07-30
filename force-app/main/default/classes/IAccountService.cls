@@ -1,3 +1,3 @@
 public interface IAccountService {
-    void setDescription(Set<Id> accountIds);
+    void setDescription(Set<Id> accountIds,String description);
 }
