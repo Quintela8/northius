@@ -1,5 +1,6 @@
 public class Application 
 {
+    
 	// Configure and create the UnitOfWorkFactory for this Application
 	public static final fflib_Application.UnitOfWorkFactory UnitOfWork = 
 		new fflib_Application.UnitOfWorkFactory(
