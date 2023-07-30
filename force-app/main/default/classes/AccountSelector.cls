@@ -1,8 +1,8 @@
 public class AccountsSelector extends fflib_SObjectSelector implements IAccountSelector
 {
-	public static IAccountsSelector newInstance()
+	public static IAccountSelector newInstance()
 	{
-		return (IAccountsSelector) Application.Selector.newInstance(Account.SObjectType);
+		return (IAccountSelector) Application.Selector.newInstance(Account.SObjectType);
 	}
 	
 	public List<Schema.SObjectField> getSObjectFieldList()
