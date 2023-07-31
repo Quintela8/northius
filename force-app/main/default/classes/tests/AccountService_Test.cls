@@ -30,7 +30,6 @@ private class AccountService_Test {
 		Application.Domain.setMock(domainMock);
 		Application.Selector.setMock(selectorMock);
 
-		// WHEN we update the opportunity Activity
 		System.Test.startTest();
 		new AccountService().setDescription(accountIds,description);
 		System.Test.stopTest();
