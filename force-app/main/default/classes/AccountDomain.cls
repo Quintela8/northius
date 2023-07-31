@@ -1,4 +1,4 @@
-public with sharing class AccountDomain extends fflib_SObjects implements IAccountDomain{
+public with sharing class AccountDomain extends fflib_SObjectDomain implements IAccountDomain{
 
     public AccountDomain(List<Account> sObjectList)
 	{
@@ -13,11 +13,14 @@ public with sharing class AccountDomain extends fflib_SObjects implements IAccou
 		}
 	}
 
-    public class Constructor implements fflib_IDomainConstructor
+    public class Constructor implements fflib_SObjectDomain.IConstructable, di_binding.Provider
 	{
-		public fflib_SObjects construct(List<Object> objectList)
-		{
-			return new AccountDomain((List<SObject>) objectList);
-		}
+		public fflib_SObjectDomain construct(List<SObject> sObjectList) {
+            return new AccountDomain(sObjectList);
+        }
+
+		public Object newInstance(Object params) {
+            return new AccountDomain((List<Account>)params);
+        }
 	}
 }

@@ -248,21 +248,21 @@ public class fflib_ApplicationForceDI {
             m_sObjectByMockDomain.put(mockDomain.sObjectType(), mockDomain);
         }
 
-    /**
-     * @description Get a domain object instance for SObjectType and init with the records specified in params
-     * @param domainSObjectType SObjectType for the domain object instance
-     * @param records List of records to handle by the domain
-     * @return  `fflib_ISObjectDomain` Domain object instnace for the object type
-     */
-    private fflib_ISObjectDomain getDomainFromFactory(SObjectType domainSObjectType, List < SObject > records) {
-        String sobjectName = domainSObjectType.getDescribe().getLabel();
-        sobjectName = toCammelCase(sobjectName);
-  
-        String developerName = 'I'+ sobjectName + 'Domain'; 
-  
-        fflib_ISObjectDomain domain;
-        return (fflib_ISObjectDomain) injector.getInstance(developerName, domainSObjectType, records);
-      }
+        /**
+         * @description Get a domain object instance for SObjectType and init with the records specified in params
+         * @param domainSObjectType SObjectType for the domain object instance
+         * @param records List of records to handle by the domain
+         * @return  `fflib_ISObjectDomain` Domain object instnace for the object type
+         */
+        private fflib_ISObjectDomain getDomainFromFactory(SObjectType domainSObjectType, List < SObject > records) {
+            String sobjectName = domainSObjectType.getDescribe().getLabel();
+            sobjectName = toCammelCase(sobjectName);
+    
+            String developerName = 'I'+ sobjectName + 'Domain'; 
+    
+            fflib_ISObjectDomain domain;
+            return (fflib_ISObjectDomain) injector.getInstance(developerName, domainSObjectType, records);
+        }
     }
     
     /**

@@ -21,16 +21,23 @@ public class Application
         }
     }
 
-	// Configure and create the SelectorFactory for this Application
-	public static final fflib_Application.SelectorFactory Selector = 
-		new fflib_Application.SelectorFactory(
-			new Map<SObjectType, Type> {
-					Account.SObjectType => AccountSelector.class});
-
+	private static fflib_ApplicationForceDI.SelectorFactory pSelector;
+    public static fflib_ApplicationForceDI.SelectorFactory Selector {
+        get {
+            if (pSelector==null) {
+                pSelector = new fflib_ApplicationForceDI.SelectorFactory();
+            }
+            return pSelector;
+        }
+    }
                     
-	public static final fflib_Application.DomainFactory Domain = 
-		new fflib_Application.DomainFactory(
-			Application.Selector,
-			new Map<SObjectType, Type> {
-					Account.SObjectType => AccountDomain.Constructor.class });
+	private static fflib_ApplicationForceDI.DomainFactory pDomain;
+	public static fflib_ApplicationForceDI.DomainFactory Domain {
+		get {
+			if (pDomain==null) {
+				pDomain = new fflib_ApplicationForceDI.DomainFactory(Selector);
+			}
+			return pDomain;
+		}
+	}
 }
