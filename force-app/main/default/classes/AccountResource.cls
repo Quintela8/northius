@@ -7,7 +7,7 @@ global with sharing class AccountResource {
         RestRequest req = RestContext.request;
         String[] uriParts = req.requestURI.split('/');
         String accountId = uriParts[2];
-        IAccountService accountService = AccountService.newInstance();
+        IAccountService accountService = (IAccountService) Application.Service.newInstance(IAccountService.class);
         accountService.setDescription(new Set<Id>{accountId},description);
     }
 }
